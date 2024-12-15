@@ -31,7 +31,7 @@
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
-            <!-- Campos de entrada -->
+            <!-- -Campos de entrada -->
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"

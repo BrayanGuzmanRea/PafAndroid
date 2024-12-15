@@ -87,16 +87,16 @@
         android:label="fragment_ag_historial_ventas"
         tools:layout="@layout/fragment_ag_historial_ventas" >
         <argument
-            android:name="fecha"
+            android:name="HVfecha"
             app:argType="string" />
         <argument
-            android:name="producto"
+            android:name="HVproducto"
             app:argType="string" />
         <argument
-            android:name="cantidad"
+            android:name="HVcantidad"
             app:argType="string" />
         <argument
-            android:name="ganancia"
+            android:name="HVganancia"
             app:argType="string" />
     </fragment>
 
