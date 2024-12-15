@@ -61,6 +61,11 @@
         <action
             android:id="@+id/action_agPerfilAgricultorFragment_to_agLogisticaVentasFragment"
             app:destination="@id/agLogisticaVentasFragment" />
+
+        <argument
+
+
+
     </fragment>
     <fragment
         android:id="@+id/agSoporteAgricultorFragment"
@@ -80,7 +85,20 @@
         android:id="@+id/agHistorialVentasFragment"
         android:name="com.example.agrohubpaf.AgHistorialVentasFragment"
         android:label="fragment_ag_historial_ventas"
-        tools:layout="@layout/fragment_ag_historial_ventas" />
+        tools:layout="@layout/fragment_ag_historial_ventas" >
+        <argument
+            android:name="fecha"
+            app:argType="string" />
+        <argument
+            android:name="producto"
+            app:argType="string" />
+        <argument
+            android:name="cantidad"
+            app:argType="string" />
+        <argument
+            android:name="ganancia"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/agNuevoProductoFragment"
@@ -101,6 +119,9 @@
         <action
             android:id="@+id/action_agProductosDisponiblesFragment_to_agEditarProductoFragment2"
             app:destination="@id/agEditarProductoFragment2" />
+        <argument
+            android:name="ep_namePro"
+            app:argType="string" />
     </fragment>
 
     <fragment

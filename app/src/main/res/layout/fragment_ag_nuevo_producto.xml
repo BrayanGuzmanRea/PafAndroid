@@ -104,21 +104,6 @@
                     android:hint="Ingrese la cantidad"
                     android:inputType="number" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha de Vencimiento"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="#4CAF50"/>
-                <EditText
-                    android:id="@+id/expiration_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="dd/mm/aaaa"
-                    android:inputType="date" />
 
                 <TextView
                     android:layout_width="match_parent"

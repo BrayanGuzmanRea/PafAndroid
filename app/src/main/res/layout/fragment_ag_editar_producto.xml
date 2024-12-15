@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:layout_marginTop="16dp"
-                android:background="#558B2F"
+                android:background="#43A047"
                 android:fontFamily="sans-serif-black"
                 android:paddingTop="5dp"
                 android:text="@string/titulo_ep"
@@ -126,7 +126,7 @@
                 android:layout_width="203dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="#2E7D32"
+                android:backgroundTint="#43A047"
                 android:text="@string/ep_btn_sele"
                 android:textColor="#FFFFFF" />
 
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:backgroundTint="#F9A825"
+                android:backgroundTint="#43A047"
                 android:drawableEnd="@drawable/baseline_save_24"
                 android:text="@string/ep_btn_a"
                 android:textColor="#000000" />
