@@ -32,21 +32,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Profile Image -->
+            <!-- Nombre EditText -->
+
             <ImageView
                 android:id="@+id/profile_image"
                 android:layout_width="98dp"
                 android:layout_height="82dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/agricultor_perfil"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-            <!-- Nombre Label -->
-
-            <!-- Nombre EditText -->
 
             <TextView
                 android:id="@+id/tvSelectImageLabel"
@@ -66,7 +63,7 @@
                 android:id="@+id/nombre_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="25dp"
                 android:text="@string/nombres"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -77,33 +74,34 @@
                 android:id="@+id/nombre"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:hint="@string/nombres"
                 android:minHeight="48dp"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/nombre_label" />
 
-            <!-- Ubicación Label -->
             <TextView
                 android:id="@+id/ubicacion_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="@string/ubicacion"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintTop_toBottomOf="@id/nombre"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
 
-            <!-- Ubicación EditText -->
             <EditText
                 android:id="@+id/ubicacion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:hint="@string/ubicacion"
                 android:minHeight="48dp"
@@ -114,48 +112,29 @@
                 app:layout_constraintTop_toBottomOf="@id/ubicacion_label" />
 
             <!-- Cultivo Principal Label -->
-            <TextView
-                android:id="@+id/cultivo_principal_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cultivo_principal"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/ubicacion"
-                tools:ignore="MissingConstraints" />
 
             <!-- Cultivo Principal EditText -->
-            <EditText
-                android:id="@+id/cultivo_principal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/cultivo_principal"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cultivo_principal_label" />
 
             <!-- Celular Label -->
+
+            <!-- Celular EditText -->
             <TextView
                 android:id="@+id/celular_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="@string/celular"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/cultivo_principal"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/ubicacion"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
 
-            <!-- Celular EditText -->
             <EditText
                 android:id="@+id/celular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:hint="@string/celular"
                 android:minHeight="48dp"
@@ -166,74 +145,33 @@
                 app:layout_constraintTop_toBottomOf="@id/celular_label" />
 
             <!-- Hectáreas Trabajadas Label -->
-            <TextView
-                android:id="@+id/hectareas_trabajadas_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hectareas_trabajadas"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/celular"
-                tools:ignore="MissingConstraints" />
 
             <!-- Hectáreas Trabajadas EditText -->
-            <EditText
-                android:id="@+id/hectareas_trabajadas"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/hectareas_trabajadas"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hectareas_trabajadas_label" />
 
             <!-- Experiencia Label -->
-            <TextView
-                android:id="@+id/experiencia_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/experiencia"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/hectareas_trabajadas"
-                tools:ignore="MissingConstraints" />
 
             <!-- Experiencia EditText -->
-            <EditText
-                android:id="@+id/experiencia"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/experiencia"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/experiencia_label" />
 
             <!-- Correo Label -->
+
+            <!-- Correo EditText -->
             <TextView
                 android:id="@+id/correo_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="@string/correo"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/experiencia"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/celular"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
 
-            <!-- Correo EditText -->
             <EditText
                 android:id="@+id/correo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:hint="@string/correo"
                 android:minHeight="48dp"

@@ -92,7 +92,7 @@
     <string name="perfil">perfil</string> <!-- Fixed the tag -->
     <string name="documento">DNI</string>
     <string name="usuario">usuario</string>
-    <string name="correo">correo</string>
+    <string name="correo">Correo</string>
     <string name="nombres">Nombre:</string>
     <string name="apellidos">apellidos</string>
     <string name="celular">Telefono:</string>
@@ -119,5 +119,27 @@
         <item>Agricultor</item>
     </string-array>
 
+
+    <!--Para rgumentos de ag_perfil_africultor-->
+
+    <string name="userName">%1$s</string>
+    <string name="emailUser">Correo Electronico: %1$s</string>
+    <string name="directionUser">Dirección: %1$s</string>
+    <string name="numberUser">Numero de Teléfono: %1$s</string>
+    <string name="timeUser">Registrado el dia %2$tA, %2$td de %2$tB del %2$tY.</string>
+
+
+
+
+    <!---->
+
+
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
 
 </resources>
