@@ -3,10 +3,12 @@ package com.example.agrohubpaf;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +60,33 @@ public class AgPerfilAgricultorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ag_perfil_agricultor, container, false);
+        // Inflar el layout del fragmento
+        View view = inflater.inflate(R.layout.fragment_ag_perfil_agricultor, container, false);
+
+        // Encontrar el botón de editar perfil
+        Button btnEditProfile = view.findViewById(R.id.btn_edit_profile);
+
+        // Encontrar el botón de cerrar sesión
+        Button btnReturn = view.findViewById(R.id.btn_return);
+
+        // Establecer el listener de clic para navegar al fragmento de edición
+        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navegar al fragmento de edición de agricultor
+                Navigation.findNavController(v).navigate(R.id.action_agPerfilAgricultorFragment_to_agEditarAgricultorFragment);
+            }
+        });
+
+        // Establecer el listener de clic para cerrar sesión
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navegar de vuelta a la pantalla de login
+                Navigation.findNavController(v).navigate(R.id.action_agPerfilAgricultorFragment_to_iniLoginFragment);
+            }
+        });
+
+        return view;
     }
 }

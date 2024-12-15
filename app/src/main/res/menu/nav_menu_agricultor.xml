@@ -13,12 +13,12 @@
             android:title="Inicio"/>
 
         <item
-            android:id="@+id/nav_perfil_agricultor"
+            android:id="@+id/agPerfilAgricultorFragment"
             android:icon="@drawable/baseline_person_24"
             android:title="Perfil"/>
 
         <item
-            android:id="@+id/nav_soporte_agricultor"
+            android:id="@+id/agSoporteAgricultorFragment"
             android:icon="@drawable/baseline_info_24"
             android:title="Soporte"/>
 

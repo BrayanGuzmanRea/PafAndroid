@@ -1,200 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AgEditarAgricultorFragment">
 
-    <ScrollView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:padding="20dp">
+        android:layout_height="wrap_content"
+        android:background="#352E45"
+        android:elevation="4dp"
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            tools:context=".view.fragments.UserProfile">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/nav_menu_agricultor">
 
-            <!-- Edit TextView -->
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/editar"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Nombre EditText -->
-
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="98dp"
-                android:layout_height="82dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/agricultor_perfil"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-            <TextView
-                android:id="@+id/tvSelectImageLabel"
-                android:layout_width="148dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/border"
-                android:gravity="center_horizontal"
-                android:text="Seleccionar Archivo"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/profile_image"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="115dp" />
-
-            <TextView
-                android:id="@+id/nombre_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="@string/nombres"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSelectImageLabel" />
-
-            <EditText
-                android:id="@+id/nombre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/nombres"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/nombre_label" />
-
-            <TextView
-                android:id="@+id/ubicacion_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/ubicacion"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/nombre"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <EditText
-                android:id="@+id/ubicacion"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/ubicacion"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ubicacion_label" />
-
-            <!-- Cultivo Principal Label -->
-
-            <!-- Cultivo Principal EditText -->
-
-            <!-- Celular Label -->
-
-            <!-- Celular EditText -->
-            <TextView
-                android:id="@+id/celular_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/celular"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@+id/ubicacion"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <EditText
-                android:id="@+id/celular"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/celular"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/celular_label" />
-
-            <!-- Hectáreas Trabajadas Label -->
-
-            <!-- Hectáreas Trabajadas EditText -->
-
-            <!-- Experiencia Label -->
-
-            <!-- Experiencia EditText -->
-
-            <!-- Correo Label -->
-
-            <!-- Correo EditText -->
-            <TextView
-                android:id="@+id/correo_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/correo"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@+id/celular"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <EditText
-                android:id="@+id/correo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input"
-                android:hint="@string/correo"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/correo_label" />
-
-            <Button
-                android:id="@+id/btnActualizarPerfil"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/verde"
-                android:padding="10dp"
-                android:text="@string/btnactualizarcontra"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/correo" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="15dp"
+            android:padding="8dp"
+            android:src="@drawable/logo" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Botón para seleccionar archivo -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/editar"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="98dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/agricultor_perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <TextView
+        android:id="@+id/tvSelectImageLabel"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:text="Seleccionar Archivo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Nombre Label -->
+    <TextView
+        android:id="@+id/nombre_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombres"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvSelectImageLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Nombre EditText -->
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombres"
+        android:background="@drawable/bg_input"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/nombre_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Ubicación Label -->
+    <TextView
+        android:id="@+id/ubicacion_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ubicacion"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Ubicación EditText -->
+    <EditText
+        android:id="@+id/ubicacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/ubicacion"
+        android:background="@drawable/bg_input"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/ubicacion_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Celular Label -->
+    <TextView
+        android:id="@+id/celular_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/celular"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/ubicacion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Celular EditText -->
+    <EditText
+        android:id="@+id/celular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/celular"
+        android:background="@drawable/bg_input"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/celular_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Correo Label -->
+    <TextView
+        android:id="@+id/correo_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/correo"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/celular"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Correo EditText -->
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/correo"
+        android:background="@drawable/bg_input"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/correo_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Botón Actualizar -->
+    <Button
+        android:id="@+id/btnActualizarPerfil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btnactualizarcontra"
+        android:backgroundTint="@color/verde"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/correo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_agPerfilAgricultorFragment_to_agLogisticaVentasFragment"
             app:destination="@id/agLogisticaVentasFragment" />
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_iniLoginFragment"
+            app:destination="@id/iniLoginFragment" />
     </fragment>
     <fragment
         android:id="@+id/agSoporteAgricultorFragment"
