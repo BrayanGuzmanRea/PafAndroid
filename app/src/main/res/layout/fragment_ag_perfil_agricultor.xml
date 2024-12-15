@@ -7,45 +7,27 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        android:paddingTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#352E45"
-        android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="90dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_agricultor"
-        android:gravity="center"
-        android:layout_gravity="center">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="start"
-            android:layout_marginVertical="15dp"
-            android:padding="8dp"
-            android:src="@drawable/logo" />
-
-    </androidx.appcompat.widget.Toolbar>
-
-
+        app:navigationIcon="@drawable/baseline_home_24"
+        app:title="Agro Hub"
+        app:titleTextColor="@color/azul" />
 
     <ImageView
         android:id="@+id/profile_picture"
         android:layout_width="155dp"
         android:layout_height="176dp"
-        android:layout_marginTop="52dp"
-        android:contentDescription="Foto del agricultor"
+        android:layout_marginTop="120dp"
         android:padding="8dp"
         android:src="@drawable/agricultor_perfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -151,6 +133,8 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_edit_profile" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

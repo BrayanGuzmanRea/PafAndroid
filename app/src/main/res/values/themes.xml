@@ -6,5 +6,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.AgroHubPaf" parent="Base.Theme.AgroHubPaf" />
+    <style name="Base.Theme.AgroHubPafDos" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/lavender</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>
