@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.agrohubpaf.IniPreCargaFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_ini_pre_carga">
+        <action
+            android:id="@+id/action_FirstFragment_to_iniLoginFragment"
+            app:destination="@id/iniLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/iniLoginFragment"
+        android:name="com.example.agrohubpaf.IniLoginFragment"
+        android:label="IniLoginFragment"
+        tools:layout="@layout/fragment_ini_login">
+        <action
+            android:id="@+id/action_iniLoginFragment_to_iniRegistroFragment"
+            app:destination="@id/iniRegistroFragment" />
+        <action
+            android:id="@+id/action_iniLoginFragment_to_agPerfilAgricultorFragment"
+            app:destination="@id/agPerfilAgricultorFragment" />
+        <action
+            android:id="@+id/action_iniLoginFragment_to_cliConsumidorVistaFragment"
+            app:destination="@id/cliConsumidorVistaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/iniRegistroFragment"
+        android:name="com.example.agrohubpaf.IniRegistroFragment"
+        android:label="fragment_ini_registro"
+        tools:layout="@layout/fragment_ini_registro" >
+        <action
+            android:id="@+id/action_iniRegistroFragment_to_iniLoginFragment"
+            app:destination="@id/iniLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agPerfilAgricultorFragment"
+        android:name="com.example.agrohubpaf.AgPerfilAgricultorFragment"
+        android:label="AgPerfilAgricultorFragment"
+        tools:layout="@layout/fragment_ag_perfil_agricultor">
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_agSoporteAgricultorFragment"
+            app:destination="@id/agSoporteAgricultorFragment" />
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_agEditarAgricultorFragment"
+            app:destination="@id/agEditarAgricultorFragment" />
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_agHistorialVentasFragment"
+            app:destination="@id/agHistorialVentasFragment" />
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_agNuevoProductoFragment"
+            app:destination="@id/agNuevoProductoFragment" />
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_agProductosDisponiblesFragment"
+            app:destination="@id/agProductosDisponiblesFragment" />
+        <action
+            android:id="@+id/action_agPerfilAgricultorFragment_to_agLogisticaVentasFragment"
+            app:destination="@id/agLogisticaVentasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agSoporteAgricultorFragment"
+        android:name="com.example.agrohubpaf.AgSoporteAgricultorFragment"
+        android:label="fragment_ag_soporte_agricultor"
+        tools:layout="@layout/fragment_ag_soporte_agricultor" />
+    <fragment
+        android:id="@+id/agEditarAgricultorFragment"
+        android:name="com.example.agrohubpaf.AgEditarAgricultorFragment"
+        android:label="fragment_ag_editar_agricultor"
+        tools:layout="@layout/fragment_ag_editar_agricultor" >
+        <action
+            android:id="@+id/action_agEditarAgricultorFragment_to_agPerfilAgricultorFragment"
+            app:destination="@id/agPerfilAgricultorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agHistorialVentasFragment"
+        android:name="com.example.agrohubpaf.AgHistorialVentasFragment"
+        android:label="fragment_ag_historial_ventas"
+        tools:layout="@layout/fragment_ag_historial_ventas" />
+
+    <fragment
+        android:id="@+id/agNuevoProductoFragment"
+        android:name="com.example.agrohubpaf.AgNuevoProductoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_ag_nuevo_producto"
+        >
+        <action
+            android:id="@+id/action_agNuevoProductoFragment_to_agPerfilAgricultorFragment"
+            app:destination="@id/agPerfilAgricultorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/agProductosDisponiblesFragment"
+        android:name="com.example.agrohubpaf.AgProductosDisponiblesFragment"
+        android:label="AgProductosDisponiblesFragment"
+        tools:layout="@layout/fragment_ag_productos_disponibles">
+        <action
+            android:id="@+id/action_agProductosDisponiblesFragment_to_agEditarProductoFragment2"
+            app:destination="@id/agEditarProductoFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/agEditarProductoFragment2"
+        android:name="com.example.agrohubpaf.AgEditarProductoFragment"
+        android:label="AgEditarProductoFragment"
+        tools:layout="@layout/fragment_ag_editar_producto">
+        <action
+            android:id="@+id/action_agEditarProductoFragment2_to_agProductosDisponiblesFragment"
+            app:destination="@id/agProductosDisponiblesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agLogisticaVentasFragment"
+        android:name="com.example.agrohubpaf.AgLogisticaVentasFragment"
+        android:label="AgLogisticaVentasFragment"
+        tools:layout="@layout/fragment_ag_logistica_ventas">
+        <action
+            android:id="@+id/action_agLogisticaVentasFragment_to_agPerfilAgricultorFragment"
+            app:destination="@id/agPerfilAgricultorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cliConsumidorVistaFragment"
+        android:name="com.example.agrohubpaf.CliConsumidorVistaFragment"
+        android:label="fragment_cli_consumidor_vista"
+        tools:layout="@layout/fragment_cli_consumidor_vista" >
+        <action
+            android:id="@+id/action_cliConsumidorVistaFragment_to_cliEditarPerfilFragment"
+            app:destination="@id/cliEditarPerfilFragment" />
+        <action
+            android:id="@+id/action_cliConsumidorVistaFragment_to_cliProductosFragment"
+            app:destination="@id/cliProductosFragment" />
+        <action
+            android:id="@+id/action_cliConsumidorVistaFragment_to_cliComprasFragment"
+            app:destination="@id/cliComprasFragment" />
+        <action
+            android:id="@+id/action_cliConsumidorVistaFragment_to_cliCarritoComprasFragment2"
+            app:destination="@id/cliCarritoComprasFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cliEditarPerfilFragment"
+        android:name="com.example.agrohubpaf.CliEditarPerfilFragment"
+        android:label="CliEditarPerfilFragment"
+        tools:layout="@layout/fragment_cli_editar_perfil">
+        <action
+            android:id="@+id/action_cliEditarPerfilFragment_to_cliConsumidorVistaFragment"
+            app:destination="@id/cliConsumidorVistaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cliProductosFragment"
+        android:name="com.example.agrohubpaf.CliProductosFragment"
+        android:label="CliProductosFragment"
+        tools:layout="@layout/fragment_cli_productos"/>
+    <fragment
+        android:id="@+id/cliComprasFragment"
+        android:name="com.example.agrohubpaf.CliComprasFragment"
+        android:label="CliComprasFragment"
+        tools:layout="@layout/fragment_cli_compras"
+        />
+    <fragment
+        android:id="@+id/cliCarritoComprasFragment2"
+        android:name="com.example.agrohubpaf.CliCarritoComprasFragment"
+        android:label="CliCarritoComprasFragment"
+        tools:layout="@layout/fragment_cli_carrito_compras">
+        <action
+            android:id="@+id/action_cliCarritoComprasFragment2_to_cliProductosFragment"
+            app:destination="@id/cliProductosFragment" />
+        <action
+            android:id="@+id/action_cliCarritoComprasFragment2_to_cliRealizarPedidoFragment"
+            app:destination="@id/cliRealizarPedidoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cliRealizarPedidoFragment"
+        android:name="com.example.agrohubpaf.CliRealizarPedidoFragment"
+        android:label="CliRealizarPedidoFragment"
+        tools:layout="@layout/fragment_cli_realizar_pedido">
+        <action
+            android:id="@+id/action_cliRealizarPedidoFragment_to_cliConfirmarPagoFragment"
+            app:destination="@id/cliConfirmarPagoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cliConfirmarPagoFragment"
+        android:name="com.example.agrohubpaf.CliConfirmarPagoFragment"
+        android:label="CliConfirmarPagoFragment"
+        tools:layout="@layout/fragment_cli_confirmar_pago">
+        <action
+            android:id="@+id/action_cliConfirmarPagoFragment_to_cliDescargarComprobanteFragment"
+            app:destination="@id/cliDescargarComprobanteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cliDescargarComprobanteFragment"
+        android:name="com.example.agrohubpaf.CliDescargarComprobanteFragment"
+        android:label="CliDescargarComprobanteFragment"
+        tools:layout="@layout/fragment_cli_descargar_comprobante">
+        <action
+            android:id="@+id/action_cliDescargarComprobanteFragment_to_cliConsumidorVistaFragment"
+            app:destination="@id/cliConsumidorVistaFragment" />
+    </fragment>
+
+
+</navigation>
