@@ -147,7 +147,7 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/gold"
         android:drawableLeft="@drawable/icon_editar"
-        android:text="EDITAR PERFIL"
+        android:text="EDITAR  PERFIL"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
