@@ -4,10 +4,13 @@ package com.example.agrohubpaf.datos;
 
 import com.example.agrohubpaf.dominio.AgricultorRequest;
 import com.example.agrohubpaf.dominio.AgricultorResponse;
+import com.example.agrohubpaf.dominio.CategoriaResponse;
 import com.example.agrohubpaf.dominio.ConsumidorRequest;
 import com.example.agrohubpaf.dominio.ConsumidorResponse;
 import com.example.agrohubpaf.dominio.LoginRequest;
 import com.example.agrohubpaf.dominio.LoginResponse;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -26,5 +29,8 @@ public interface ApiService {
 
     @POST("login")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
+
+    @GET("obtenerCategorias")
+    Call<List<CategoriaResponse>> obtenerCategorias();
 
 }

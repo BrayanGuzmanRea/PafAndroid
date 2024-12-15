@@ -1,64 +1,116 @@
 package com.example.agrohubpaf;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CliConsumidorVistaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
+import com.example.agrohubpaf.R;
+import com.example.agrohubpaf.datos.ApiClient;
+import com.example.agrohubpaf.datos.ApiService;
+import com.example.agrohubpaf.dominio.CategoriaResponse;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class CliConsumidorVistaFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CliConsumidorVistaFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CliConsumidorVistaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CliConsumidorVistaFragment newInstance(String param1, String param2) {
-        CliConsumidorVistaFragment fragment = new CliConsumidorVistaFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private LinearLayout contenedorCategorias;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_cli_consumidor_vista, container, false);
+        contenedorCategorias = view.findViewById(R.id.contenedor_categorias);
+        cargarCategorias();
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cli_consumidor_vista, container, false);
+    private void cargarCategorias() {
+        ApiClient.getClient().create(ApiService.class).obtenerCategorias().enqueue(new Callback<List<CategoriaResponse>>() {
+            @Override
+            public void onResponse(Call<List<CategoriaResponse>> call, Response<List<CategoriaResponse>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    for (CategoriaResponse categoria : response.body()) {
+                        agregarLayoutCategoria(categoria);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<CategoriaResponse>> call, Throwable t) {
+                if (getContext() != null) {
+                    Toast.makeText(getContext(), "Error al cargar categorías: " + t.getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void agregarLayoutCategoria(CategoriaResponse categoria) {
+        if (getContext() == null) return;
+
+        // Crear CardView para la categoría
+        CardView cardView = new CardView(getContext());
+        LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        cardParams.setMargins(0, 16, 0, 16);
+        cardView.setLayoutParams(cardParams);
+        cardView.setRadius(8);
+        cardView.setCardElevation(4);
+
+        // Layout interior del CardView
+        LinearLayout layoutCategoria = new LinearLayout(getContext());
+        layoutCategoria.setOrientation(LinearLayout.VERTICAL);
+        layoutCategoria.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        layoutCategoria.setPadding(16, 16, 16, 16);
+
+        // Título de la categoría
+        TextView tituloCategoria = new TextView(getContext());
+        tituloCategoria.setText("Categoría: " + categoria.getNombreCategoria());
+        tituloCategoria.setTextSize(18);
+        tituloCategoria.setPadding(0, 0, 0, 16);
+
+        // Agregar el título al layout
+        layoutCategoria.addView(tituloCategoria);
+
+        // Aquí puedes agregar más elementos como imágenes de productos
+        // Por ejemplo:
+        ImageView imagenProducto = new ImageView(getContext());
+        imagenProducto.setImageResource(R.drawable.arandanos); // Asegúrate de tener esta imagen
+        imagenProducto.setAdjustViewBounds(true);
+        imagenProducto.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        layoutCategoria.addView(imagenProducto);
+
+        // Texto del precio
+        TextView textoPrecio = new TextView(getContext());
+        textoPrecio.setText("Precio por kilo: $50");
+        textoPrecio.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        textoPrecio.setPadding(0, 16, 0, 0);
+        layoutCategoria.addView(textoPrecio);
+
+        // Agregar el layout al CardView
+        cardView.addView(layoutCategoria);
+
+        // Agregar el CardView al contenedor principal
+        contenedorCategorias.addView(cardView);
     }
 }
