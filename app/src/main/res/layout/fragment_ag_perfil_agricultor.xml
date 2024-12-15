@@ -7,39 +7,56 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+    <!-- Barra superior -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:paddingTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:background="#352E45"
+        android:elevation="4dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/baseline_home_24"
-        app:title="Agro Hub"
-        app:titleTextColor="@color/azul" />
+        app:menu="@menu/nav_menu_agricultor">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="15dp"
+            android:padding="8dp"
+            android:src="@drawable/logo" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <!-- Cultivo principal -->
 
     <ImageView
         android:id="@+id/profile_picture"
         android:layout_width="155dp"
         android:layout_height="176dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Foto del agricultor"
         android:padding="8dp"
         android:src="@drawable/agricultor_perfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="@string/userName"
+        android:text="José Manuel Diaz Larios"
         android:textColor="#388E3C"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_picture" />
 
@@ -48,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/emailUser"
+        android:text="Cajamarca, Perú"
         android:textColor="#4CAF50"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +77,7 @@
         android:id="@+id/tv_main_crops"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/directionUser"
+        android:text="Cultivo: Maíz, Trigo, Papa"
         android:textSize="14sp"
         android:textColor="#212121"
         android:layout_marginTop="8dp"
@@ -73,7 +90,7 @@
         android:id="@+id/tv_worked_area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/numberUser"
+        android:text="Hectáreas: 50 ha"
         android:textSize="14sp"
         android:textColor="#212121"
         android:layout_marginTop="4dp"
@@ -86,7 +103,7 @@
         android:id="@+id/tv_experience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/timeUser"
+        android:text="Experiencia: 15 años"
         android:textSize="14sp"
         android:textColor="#212121"
         android:layout_marginTop="4dp"
@@ -95,8 +112,30 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Teléfono -->
+    <TextView
+        android:id="@+id/tv_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teléfono: +51 987 654 321"
+        android:textSize="14sp"
+        android:textColor="#212121"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_experience"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Correo -->
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo: josemanuel@agrohub.com"
+        android:textSize="14sp"
+        android:textColor="#212121"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botón de acción -->
 
@@ -105,7 +144,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/gold"
         android:drawableLeft="@drawable/icon_editar"
         android:text="EDITAR PERFIL"
@@ -113,9 +152,9 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_experience"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
     <Button
         android:id="@+id/btn_return"
@@ -125,7 +164,7 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/green"
         android:drawableLeft="@drawable/baseline_fizquierda_black"
-        android:text="Cerrar Sesion"
+        android:text="REGRESAR"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -133,8 +172,6 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_edit_profile" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
