@@ -57,7 +57,7 @@
     <!-- EDITAR PRODUCTO -->
     <string name="titulo_ep">Editar Producto</string>
     <string name="ep_namePro">Nombre del Producto</string>
-    <string name="ep_cat">Categira</string>
+    <string name="ep_cat">Categoria</string>
     <string name="ep_pre">Precio (S/)</string>
     <string name="ep_can">Cantidad</string>
     <string name="ep_des">Descripción</string>
@@ -128,8 +128,15 @@
     <string name="numberUser">Numero de Teléfono: %1$s</string>
     <string name="timeUser">Registrado el dia %2$tA, %2$td de %2$tB del %2$tY.</string>
 
-
-
+    <!--Para  ag_historial_ventas-->
+    <string name="HVfecha">Fecha</string>
+    <string name="HVproducto">Producto</string>
+    <string name="HVcantidad">Cantidad</string>
+    <string name="HVganancia">Ganancia</string>
+    <string name="lblHVFecha"></string>
+    <string name="lblHVProducto"></string>
+    <string name="lblHVCantidad"></string>
+    <string name="lblHVGanancias"></string>
 
     <!---->
 
